@@ -1,0 +1,22 @@
+# Introduction
+
+This is a book created from markdown and executable code.
+
+See @knuth84 for additional discussion of literate programming.
+
+```{r}
+1 + 1
+```
+
+A `gt` table:
+
+```{r tbl-test, echo = FALSE}
+#| results: 'asis'
+#| tbl-cap: "example caption from chunk option" 
+library(gt)
+mtcars %>%
+  head() %>% 
+  gt(caption = "example caption from inside of `gt()` call")
+```
+
+In \@tbl:tbl-test
