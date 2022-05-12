@@ -19,4 +19,4 @@ mtcars %>%
   gt(caption = "example caption from inside of `gt()` call")
 ```
 
-In \@tbl:tbl-test
+In @tbl:tbl-test
