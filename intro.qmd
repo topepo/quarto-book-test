@@ -12,11 +12,22 @@ A `gt` table:
 
 ```{r tbl-test, echo = FALSE}
 #| results: 'asis'
-#| tbl-cap: "example caption from chunk option" 
+#| caption: "example caption from chunk option" 
 library(gt)
 mtcars %>%
   head() %>% 
   gt(caption = "example caption from inside of `gt()` call")
 ```
 
-In @tbl:tbl-test
+In @tbl-test
+
+
+
+```{r tbl-test-2, echo = FALSE}
+#| results: 'asis'
+#| caption: "example caption from chunk option" 
+library(gt)
+mtcars %>%
+  tail() %>% 
+  gt()
+```
