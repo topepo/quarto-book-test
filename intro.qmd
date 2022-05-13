@@ -8,26 +8,35 @@ See @knuth84 for additional discussion of literate programming.
 1 + 1
 ```
 
-A `gt` table:
+A `gt` table that works:
 
-```{r tbl-test, echo = FALSE}
-#| results: 'asis'
-#| caption: "example caption from chunk option" 
+```{r tbl-test-1}
+#| tbl-cap: "example caption using chunk 'tbl-cap' option"
 library(gt)
 mtcars %>%
   head() %>% 
-  gt(caption = "example caption from inside of `gt()` call")
-```
-
-In @tbl-test
-
-
-
-```{r tbl-test-2, echo = FALSE}
-#| results: 'asis'
-#| caption: "example caption from chunk option" 
-library(gt)
-mtcars %>%
-  tail() %>% 
   gt()
 ```
+
+reference @tbl-test-1
+
+Not so much: 
+
+```{r tbl-test-2}
+#| caption: "example caption using chunk 'caption' option"
+mtcars %>%
+  head() %>% 
+  gt()
+```
+
+reference @tbl-test-2
+
+
+
+```{r tbl-test-3}
+mtcars %>%
+  head(caption = "example caption from inside of `gt()` call") %>% 
+  gt()
+```
+
+reference @tbl-test-3
